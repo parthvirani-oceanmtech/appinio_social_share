@@ -44,6 +44,7 @@ public class SocialShareUtil {
     private final String INSTAGRAM_STORY_PACKAGE = "com.instagram.share.ADD_TO_STORY";
     private final String INSTAGRAM_FEED_PACKAGE = "com.instagram.share.ADD_TO_FEED";
     private final String WHATSAPP_PACKAGE = "com.whatsapp";
+    private final String WHATSAPP_BUSINESS_PACKAGE = "com.whatsapp.w4b";
     private final String TELEGRAM_PACKAGE = "org.telegram.messenger";
     private final String TIKTOK_PACKAGE = "com.zhiliaoapp.musically";
     private final String FACEBOOK_STORY_PACKAGE = "com.facebook.stories.ADD_TO_STORY";
@@ -61,6 +62,10 @@ public class SocialShareUtil {
         return shareFileAndTextToPackage(imagePath, msg, context, WHATSAPP_PACKAGE);
     }
 
+
+    public String shareToWhatsappBusiness(String imagePath, String msg, Context context) {
+        return shareFileAndTextToPackage(imagePath, msg, context, WHATSAPP_BUSINESS_PACKAGE);
+    }
 
     public String shareToInstagramDirect(String text, Context activity) {
         return shareTextToPackage(text, activity, INSTAGRAM_PACKAGE);
@@ -306,6 +311,7 @@ public class SocialShareUtil {
         appsMap.put("instagram", INSTAGRAM_PACKAGE);
         appsMap.put("facebook_stories", FACEBOOK_PACKAGE);
         appsMap.put("whatsapp", WHATSAPP_PACKAGE);
+        appsMap.put("whatsapp-business", WHATSAPP_BUSINESS_PACKAGE);
         appsMap.put("telegram", TELEGRAM_PACKAGE);
         appsMap.put("messenger", FACEBOOK_MESSENGER_PACKAGE);
         appsMap.put("messenger-lite", FACEBOOK_MESSENGER_LITE_PACKAGE);
@@ -324,7 +330,8 @@ public class SocialShareUtil {
         intent.setData(Uri.parse("sms:"));
         List<ResolveInfo> resolvedActivities = pm.queryIntentActivities(intent, 0);
         apps.put("message", !resolvedActivities.isEmpty());
-        String[] appNames = {"instagram", "facebook_stories", "whatsapp", "telegram", "messenger", "facebook","facebook-lite","messenger-lite", "instagram_stories", "twitter", "tiktok"};
+        String[] appNames = {"instagram", "facebook_stories", "whatsapp","whatsapp-business", "telegram", "messenger"
+                , "facebook","facebook-lite","messenger-lite", "instagram_stories", "twitter", "tiktok"};
 
         for (int i = 0; i < appNames.length; i++) {
             try {
