@@ -8,8 +8,7 @@ abstract class AppinioSocialSharePlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static AppinioSocialSharePlatform _instance =
-      MethodChannelAppinioSocialShare();
+  static AppinioSocialSharePlatform _instance = MethodChannelAppinioSocialShare();
 
   /// The default instance of [AppinioSocialSharePlatform] to use.
   ///
@@ -34,6 +33,10 @@ abstract class AppinioSocialSharePlatform extends PlatformInterface {
 
   ///filaPath only works for android
   Future<String> shareToWhatsapp(String message, {String? filePath}) {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<String> shareToWhatsappBusiness(String message, {String? filePath}) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
@@ -96,8 +99,7 @@ abstract class AppinioSocialSharePlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<String> shareToSystem(String title, String message,
-      {String? filePath}) {
+  Future<String> shareToSystem(String title, String message, {String? filePath}) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
