@@ -1,4 +1,4 @@
-```appinio_social_share``` supports sharing files to social media (Facebook, Instagram, Instagram Story, Messenger, Telegram, WhatsApp, Twitter, Tiktok, SMS, System, etc.). If you want to share text, file, image, text with image or text with files then this plugin is all you need.
+```appinio_social_share``` supports sharing files to social media (Facebook, Instagram, Instagram Story, Messenger, Telegram, WhatsApp, Twitter, SMS, System, etc.). If you want to share text, file, image, text with image or text with files then this plugin is all you need.
 
 <br />
 
@@ -15,8 +15,6 @@
 - Telegram
 - WhatsApp
 - Twitter
-- Tiktok Status
-- Tiktok video
 - SMS
 - System ShareSheet
 - Copy to clipboard
@@ -258,8 +256,6 @@ class _MyAppState extends State<MyApp> {
 | shareToFacebook      |✔️| ✔️ | String message, String filePath | Share text hashtag and image to Facebook.
 | shareToFacebookStory      |✔️| ✔️ |String stickerImage,String appId,{String? backgroundImage, String? backgroundVideo, String? backgroundTopColor, String? backgroundBottomColor, String? attributionURL} | Share background image, movable sticker, background colors to Facebook Story.
 | shareToMessenger      |✔️| ✔️ | String message | Share text message to Messenger.
-| shareToTiktokStatus      |❌ |  ✔️  | String  filePath | ShaShare image to Tiktok Story.
-| shareToTiktokPost      |❌ |  ✔️  | String  videoPath | Share video to tiktok.
 | shareToTwitter      |  ✔️   |  ✔️ | String message, {String? filePath} | Share Image and text to Twitter.
 | shareToSMS      |✔️| ✔️ | String message, {String? filePath} | Share Image and text to default sms app.
 | copyToClipBoard      |✔️| ✔️ | String message | To Copy text to clipboard.

@@ -34,7 +34,6 @@ public class AppinioSocialSharePlugin implements FlutterPlugin, MethodCallHandle
     private final String WHATSAPP_BUSINESS = "whatsapp-business";
     private final String TWITTER = "twitter";
     private final String SMS = "sms";
-    private final String TIKTOK = "tiktok_status";
     private final String SYSTEM_SHARE = "system_share";
     private final String COPY_TO_CLIPBOARD = "copy_to_clipboard";
     private final String TELEGRAM = "telegram";
@@ -110,8 +109,6 @@ public class AppinioSocialSharePlugin implements FlutterPlugin, MethodCallHandle
                 return socialShareUtil.copyToClipBoard(message, activeContext);
             case SYSTEM_SHARE:
                 return socialShareUtil.shareToSystem(title, message, imagePath, "image/*", title, context);
-            case TIKTOK:
-                return socialShareUtil.shareToTikTok(imagePath, activeContext, message);
             case SMS:
                 return socialShareUtil.shareToSMS(message, activeContext,imagePath);
             default:

@@ -2,7 +2,6 @@
 
 * Features:
   - Adding support to share to Instagram Feed-Posts & Reels.
-  - Adding support to share to TikTok Status.
  
 ## [0.1.4] - 2022.10.18
 

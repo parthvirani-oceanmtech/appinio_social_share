@@ -46,7 +46,6 @@ public class SocialShareUtil {
     private final String WHATSAPP_PACKAGE = "com.whatsapp";
     private final String WHATSAPP_BUSINESS_PACKAGE = "com.whatsapp.w4b";
     private final String TELEGRAM_PACKAGE = "org.telegram.messenger";
-    private final String TIKTOK_PACKAGE = "com.zhiliaoapp.musically";
     private final String FACEBOOK_STORY_PACKAGE = "com.facebook.stories.ADD_TO_STORY";
     private final String FACEBOOK_PACKAGE = "com.facebook.katana";
     private final String FACEBOOK_LITE_PACKAGE = "com.facebook.lite";
@@ -73,10 +72,6 @@ public class SocialShareUtil {
 
     public String shareToInstagramFeed(String imagePath, Context activity, String text) {
         return shareFileAndTextToPackage(imagePath, text, activity, INSTAGRAM_PACKAGE);
-    }
-
-    public String shareToTikTok(String imagePath, Context activity, String text) {
-        return shareFileAndTextToPackage(imagePath, text, activity, TIKTOK_PACKAGE);
     }
 
     public String shareToTwitter(String imagePath, Context activity, String text) {
@@ -319,7 +314,6 @@ public class SocialShareUtil {
         appsMap.put("facebook-lite", FACEBOOK_LITE_PACKAGE);
         appsMap.put("instagram_stories", INSTAGRAM_PACKAGE);
         appsMap.put("twitter", TWITTER_PACKAGE);
-        appsMap.put("tiktok", TIKTOK_PACKAGE);
 
         Map<String, Boolean> apps = new HashMap<String, Boolean>();
 
@@ -331,7 +325,7 @@ public class SocialShareUtil {
         List<ResolveInfo> resolvedActivities = pm.queryIntentActivities(intent, 0);
         apps.put("message", !resolvedActivities.isEmpty());
         String[] appNames = {"instagram", "facebook_stories", "whatsapp","whatsapp-business", "telegram", "messenger"
-                , "facebook","facebook-lite","messenger-lite", "instagram_stories", "twitter", "tiktok"};
+                , "facebook","facebook-lite","messenger-lite", "instagram_stories", "twitter" };
 
         for (int i = 0; i < appNames.length; i++) {
             try {

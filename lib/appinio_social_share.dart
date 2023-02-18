@@ -79,16 +79,6 @@ class AppinioSocialShare {
         attributionURL: attributionURL);
   }
 
-  ///works only for android
-  Future<String> shareToTiktokStatus(String filePath) {
-    return AppinioSocialSharePlatform.instance.shareToTiktokStatus(filePath);
-  }
-
-  Future<String> shareToTiktokPost(String videoFile) {
-    if (Platform.isAndroid) return shareToTiktokStatus(videoFile);
-    return AppinioSocialSharePlatform.instance.shareToTiktokPost(videoFile);
-  }
-
   Future<String> shareToSystem(String title, String message, {String? filePath}) {
     return AppinioSocialSharePlatform.instance.shareToSystem(title, message, filePath: filePath);
   }

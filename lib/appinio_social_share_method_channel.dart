@@ -17,8 +17,6 @@ class MethodChannelAppinioSocialShare extends AppinioSocialSharePlatform {
   final String whatsappBusiness = "whatsapp-business";
   final String twitter = "twitter";
   final String sms = "sms";
-  final String tiktokStatus = "tiktok_status";
-  final String tiktokPost = "tiktok_post";
   final String systemShare = "system_share";
   final String copyToClipboard = "copy_to_clipboard";
   final String telegram = "telegram";
@@ -31,18 +29,6 @@ class MethodChannelAppinioSocialShare extends AppinioSocialSharePlatform {
   @override
   Future<Map> getInstalledApps() async {
     return await methodChannel.invokeMethod(installedApps);
-  }
-
-  @override
-  Future<String> shareToTiktokStatus(String filePath) async {
-    if (Platform.isIOS) return "Not implemented for iOS";
-    return ((await methodChannel.invokeMethod<String>(tiktokStatus, {"imagePath": filePath, "message": ""})) ?? "");
-  }
-
-  @override
-  Future<String> shareToTiktokPost(String videoFile) async {
-    if (Platform.isAndroid) return "Not implemented for android";
-    return ((await methodChannel.invokeMethod<String>(tiktokPost, {"videoFile": videoFile})) ?? "");
   }
 
   @override
