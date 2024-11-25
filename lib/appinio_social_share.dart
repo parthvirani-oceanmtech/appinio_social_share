@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'appinio_social_share_platform_interface.dart';
 
 class AppinioSocialShare {
